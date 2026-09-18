@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Autos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Bootstrap/biblioteca bootstrap/css/bootstrap.min.css">
+</head>
+<body class="bg-dark-subtle"> 
+    <div class="container mt-5">
+
+
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Gestión de Vehículos</h2>
+        </div>
+
+
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0">Datos del alumno</h5>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6 col-lg-3">
+                        <label for="marca" class="form-label">Marca</label>
+                        <input type="text" class="form-control" id="marca" placeholder="Marca">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <label for="modelo" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="modelo" placeholder="Modelo">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <label for="año" class="form-label">Año</label>
+                        <input type="number" class="form-control" id="año" placeholder="Año">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <label for="patente" class="form-label">Patente</label>
+                        <input type="text" class="form-control" id="patente" placeholder="Patente">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <label for="kilometros" class="form-label">Kilometros</label>
+                        <input type="number" class="form-control" id="kilometros" placeholder="Kilometros">
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <label for="fechaIngreso" class="form-label">Fecha de Ingreso</label>
+                        <input type="date" class="form-control" id="fechaIngreso" placeholder="Fecha de Ingreso">
+                    </div>
+
+                </div>
+
+                <div class="mt-4 text-end">
+                    <button type="button" class="btn btn-warning" onclick="agregarAuto()">
+                        <i class="bi bi-plus-circle"></i>
+                        Agregar vehiculo
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+<!-- Tabla -->
+        <div class="card shadow-sm">
+
+            <div class="card-header">
+                <h5 class="mb-0">Listado de alumnos</h5>
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>DNI</th>
+                                <th>Dirección</th>
+                                <th>Teléfono</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaProducto">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/Bootstrap/biblioteca bootstrap/js/bootstrap.min.js"></script>
+    <script src="auto1.0.0.js"></script>
+</body>
+</html>

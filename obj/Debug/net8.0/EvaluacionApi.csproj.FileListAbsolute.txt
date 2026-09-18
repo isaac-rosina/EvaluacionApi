@@ -257,3 +257,5 @@ C:\Users\Issac\Desktop\EvaluacionApi\EvaluacionApi\obj\Debug\net8.0\refint\Evalu
 C:\Users\Issac\Desktop\EvaluacionApi\EvaluacionApi\obj\Debug\net8.0\EvaluacionApi.pdb
 C:\Users\Issac\Desktop\EvaluacionApi\EvaluacionApi\obj\Debug\net8.0\EvaluacionApi.genruntimeconfig.cache
 C:\Users\Issac\Desktop\EvaluacionApi\EvaluacionApi\obj\Debug\net8.0\ref\EvaluacionApi.dll
+C:\Users\Issac\Desktop\EvaluacionApi\EvaluacionApi\obj\Debug\net8.0\EvaluacionApi.sourcelink.json
+C:\Users\Issac\Desktop\EvaluacionApi\EvaluacionApi\bin\Debug\net8.0\EvaluacionApi.staticwebassets.runtime.json

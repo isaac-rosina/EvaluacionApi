@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "5kyiX+Glfrv6NAayyZO676btbrQQyz32lW1b7J1Pb8Q=",
+  "Hash": "Fsa03wQfS6FTWjlcqKILsl5vCCNH9bGAE+tKLQ58F8E=",
   "Source": "EvaluacionApi",
   "BasePath": "_content/EvaluacionApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "EvaluacionApi\\wwwroot",
+      "Source": "EvaluacionApi",
+      "ContentRoot": "C:\\Users\\Issac\\Desktop\\EvaluacionApi\\EvaluacionApi\\wwwroot\\",
+      "BasePath": "_content/EvaluacionApi",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

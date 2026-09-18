@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Issac\\Desktop\\EvaluacionApi\\EvaluacionApi\\wwwroot\\views\\auto.html",
+      "PackagePath": "staticwebassets\\views\\auto.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.EvaluacionApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.EvaluacionApi.props",
+      "PackagePath": "build\\EvaluacionApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.EvaluacionApi.props",
+      "PackagePath": "buildMultiTargeting\\EvaluacionApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.EvaluacionApi.props",
+      "PackagePath": "buildTransitive\\EvaluacionApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
