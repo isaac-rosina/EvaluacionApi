@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Autos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Bitcount+Prop+Single:wght@100..900&family=Black+Ops+One&family=Bungee&family=Changa+One:ital@0;1&family=Freeman&family=Momo+Trust+Display&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/Bootstrap/biblioteca bootstrap/css/bootstrap.min.css">
 </head>
-<body class="bg-dark-subtle"> 
+
+<body class="bg-dark-subtle">
     <div class="container mt-5">
 
 
         <div class="text-center mb-4">
-            <h2 class="fw-bold">Gestión de Vehículos</h2>
+            <h2 class="fw-lighter">Gestión de Vehículos</h2>
         </div>
 
 
-        <div class="card shadow-sm mb-4">
+        <div class="card shadow-sm mb-4 text-bg-dark border-success">
 
-            <div class="card-header bg-secondary text-white">
-                <h5 class="mb-0">Datos del alumno</h5>
+            <div class="card-header bg-success text-white text-center">
+                <h5 class="subtitle mb-0">Agregar Vehículo</h5>
             </div>
 
-            <div class="card-body">
+            <div class="card-body  fs-5">
 
                 <div class="row g-3">
 
@@ -68,31 +72,85 @@
             </div>
         </div>
 
-<!-- Tabla -->
-        <div class="card shadow-sm">
+<!-- //modal editar -->
+        <div class="modal fade" tabindex="-1" id="modalEditar">
+            <div class="modal-dialog">
+                <div class="modal-content bg-light">
+                    <div class="modal-header text-bg-dark">
+                        <h5 class="modal-title">DATOS A CAMBIAR</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-dark-subtle fw-bold">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <p>ID: <span id="idEditar"></span></p>
+                            </div>
 
-            <div class="card-header">
-                <h5 class="mb-0">Listado de alumnos</h5>
+                            <div class="col-md-6">
+                                <label for="marcaEditar" class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="marcaEditar" placeholder="Marca">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="modeloEditar" class="form-label">Modelo</label>
+                                <input type="text" class="form-control" id="modeloEditar" placeholder="Modelo">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="añoEditar" class="form-label">Año</label>
+                                <input type="number" class="form-control" id="añoEditar" placeholder="Año">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="patenteEditar" class="form-label">Patente</label>
+                                <input type="text" class="form-control" id="patenteEditar" placeholder="Patente">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="kilometrosEditar" class="form-label">Kilometros</label>
+                                <input type="number" class="form-control" id="kilometrosEditar" placeholder="Kilometros">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="fechaIngresoEditar" class="form-label">Fecha de Ingreso</label>
+                                <input type="date" class="form-control" id="fechaIngresoEditar">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer bg-dark-subtle">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" onclick="editarAuto()">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Tabla -->
+        <div class="card shadow-sm text-bg-dark border-primary">
+
+            <div class="card-header text-bg-primary text-center">
+                <h5 class="subtitle mb-0">Listado de Vehículos</h5>
             </div>
 
             <div class="card-body">
 
                 <div class="table-responsive">
 
-                    <table class="table table-hover align-middle">
+                    <table class="table table-hover align-middle table-striped">
 
                         <thead class="table-dark">
                             <tr>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>DNI</th>
-                                <th>Dirección</th>
-                                <th>Teléfono</th>
-                                <th>Email</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Año</th>
+                                <th>Patente</th>
+                                <th>Kilometros</th>
+                                <th>Fecha Ingreso</th>
                             </tr>
                         </thead>
 
-                        <tbody id="tablaProducto">
+                        <tbody id="tablaAuto" class="table-secondary">
                         </tbody>
 
                     </table>
@@ -105,6 +163,7 @@
     </div>
 
     <script src="/Bootstrap/biblioteca bootstrap/js/bootstrap.min.js"></script>
-    <script src="auto1.0.0.js"></script>
+    <script src="/js/auto1.0.0.js"></script>
 </body>
+
 </html>

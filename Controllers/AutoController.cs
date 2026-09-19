@@ -24,6 +24,19 @@ namespace EvaluacionApi.Controllers
             return Ok(auto);
         }
 
+        [HttpGet("{autoId}")]
+        public async Task<IActionResult> obtenerAuto( int autoId)
+        {
+            var auto = await _context.Autos.FirstOrDefaultAsync(a => a.AutoId == autoId);
+
+            if(auto == null) {
+                return NotFound("Vehículo no encontrado.");
+            }
+            else {
+                return Ok(auto);
+            }
+        }
+
         [HttpPost] 
         public async Task<IActionResult> CrearAuto([FromBody] Auto auto)
         {
