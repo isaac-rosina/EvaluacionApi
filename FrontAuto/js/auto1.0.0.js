@@ -6,6 +6,20 @@ function agregarAuto() {
         patente: document.getElementById("patente").value,
         km: document.getElementById("kilometros").value,
         fechaIngreso: document.getElementById("fechaIngreso").value,
+        disponible: true,
+    };
+
+    if((auto.marca && auto.modelo && auto.año && auto.patente && auto.km && auto.fechaIngreso) == "") {
+        alert("Todos los campos deben estar completos.");
+        return;
+    };
+    if(auto.modelo.length > 10) {
+        alert("El modelo puede tener 10 carácteres como máximo.");
+        return;
+    }
+    if (auto.km < 0) {
+        alert("Los kilometros no pueden ser negativos");
+        return;
     };
 
     fetch("http://localhost:5177/api/Auto", {
@@ -72,7 +86,7 @@ function mostrarAuto(data) {
         eliminar.style.fontFamily = '"Momo Trust Display", sans-serif';
         eliminar.setAttribute(
             "onclick",
-            `validacionEliminar(${element.autoId})`
+            `validacionEliminar(${element.autoId}, ${element.disponible})`
         );
 
         let tEliminar = tr.insertCell(7);
@@ -150,7 +164,12 @@ function editarAuto() {
     .catch((error) => console.error("No se pudo editar el vehículo.", error));
 }
 
-function validacionEliminar(id) {
+function validacionEliminar(id, disponible) {
+    if (disponible == true) {
+        alert("No se puede eliminar un vehículo disponible.");
+        return;
+    };
+
     var siEliminar = confirm("¿Deseas eliminar el vehículo?");
 
     if(siEliminar == true) {

@@ -47,11 +47,11 @@ namespace EvaluacionApi.Controllers
                 {
                     Marca = auto.Marca,
                     Modelo = auto.Modelo,
-                    Anio = auto.Anio,
+                    Año = auto.Año,
                     Patente = auto.Patente,
                     Km = auto.Km,
                     FechaIngreso = auto.FechaIngreso,
-                    Diponible = auto.Diponible,
+                    Disponible = auto.Disponible,
                 };
                 _context.Add(nuevoAuto);
                 await _context.SaveChangesAsync();
@@ -75,11 +75,11 @@ namespace EvaluacionApi.Controllers
             if(!existeAuto) {
                 editarAuto.Marca = auto.Marca;
                 editarAuto.Modelo = auto.Modelo;
-                editarAuto.Anio = auto.Anio;
+                editarAuto.Año = auto.Año;
                 editarAuto.Patente = auto.Patente;
                 editarAuto.Km = auto.Km;
                 editarAuto.FechaIngreso = auto.FechaIngreso;
-                editarAuto.Diponible = auto.Diponible;
+                editarAuto.Disponible = auto.Disponible;
 
                 await _context.SaveChangesAsync();
 
@@ -97,6 +97,10 @@ namespace EvaluacionApi.Controllers
 
             if(auto == null) {
                 return NotFound("Vehiculo no encontrado.");
+            };
+            if (auto.Disponible)
+            {
+                return BadRequest("No se puede eliminar un vehículo disponible.");
             };
 
             _context.Autos.Remove(auto);
