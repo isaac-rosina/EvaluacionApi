@@ -11,7 +11,7 @@ public class Auto
     public int Año { get; set; }
     public string? Patente { get; set; }
     public int Km { get; set; }
-    public DateTime FechaIngreso { get; set; }
+    public DateOnly? FechaIngreso { get; set; }
     public bool Disponible { get; set; }
 
 }

@@ -32,6 +32,8 @@ function agregarAuto() {
     })
         .then((res) => res.json())
         .then(() => {
+            alert("Auto agregado exitosamente");
+            alert("El auto que agregaste esta disponible por lo tanto no podra ser eliminado");
             document.getElementById("marca").value = "";
             document.getElementById("modelo").value = "";
             document.getElementById("año").value = "";
@@ -112,6 +114,7 @@ function buscarValoresAuto(id) {
             document.getElementById("patenteEditar").value = data.patente;
             document.getElementById("kilometrosEditar").value = data.km;
             document.getElementById("fechaIngresoEditar").value = data.fechaIngreso;
+            document.getElementById(data.disponible ? "disponible-si" : "disponible-no").checked = true;
 
             const id = `<span id="idEditar">${data.autoId}</span>`
             document.getElementById("idEditar").innerHTML = id;
@@ -131,10 +134,11 @@ function editarAuto() {
         autoId: parseInt(id),
         marca: document.getElementById("marcaEditar").value,
         modelo: document.getElementById("modeloEditar").value,
-        año: document.getElementById("añoEditar").value,
+        año: parseInt(document.getElementById("añoEditar").value),    
         patente: document.getElementById("patenteEditar").value,
-        km: document.getElementById("kilometrosEditar").value,
-        fechaIngreso: document.getElementById("fechaIngresoEditar").value,
+        km: parseInt(document.getElementById("kilometrosEditar").value),  
+        fechaIngreso: document.getElementById("fechaIngresoEditar").value || null, 
+        disponible: document.querySelector('input[name="disponible"]:checked').value === "true",
     }
 
      fetch(`http://localhost:5177/api/Auto/${id}`, {
