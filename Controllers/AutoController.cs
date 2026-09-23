@@ -40,7 +40,7 @@ namespace EvaluacionApi.Controllers
         [HttpPost] 
         public async Task<IActionResult> CrearAuto([FromBody] Auto auto)
         {
-            var existeAuto = await _context.Autos.AnyAsync(a => a.Marca == auto.Marca && a.Modelo == auto.Modelo);
+            var existeAuto = await _context.Autos.AnyAsync(a => a.Patente == auto.Patente);
 
             if(!existeAuto) {
                 var nuevoAuto = new Auto
@@ -70,7 +70,7 @@ namespace EvaluacionApi.Controllers
                 return Ok("El vehiculo que quiere editar no existe");
             };
 
-            var existeAuto = await _context.Autos.AnyAsync(a => a.Marca == auto.Marca && a.Modelo == auto.Modelo && a.AutoId != autoId);
+            var existeAuto = await _context.Autos.AnyAsync(a => a.Patente == auto.Patente && a.AutoId != autoId);
 
             if(!existeAuto) {
                 editarAuto.Marca = auto.Marca;

@@ -1,6 +1,6 @@
 function agregarAuto() {
     var auto = {
-        marca: document.getElementById("marca").value,
+        marca: document.getElementById("marca").value.Trim(),
         modelo: document.getElementById("modelo").value,
         año: document.getElementById("año").value,
         patente: document.getElementById("patente").value,
@@ -45,11 +45,18 @@ function agregarAuto() {
 }
 
 function obtenerAuto() {
+    var patentes = [];
+
     fetch("http://localhost:5177/api/Auto")
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
             mostrarAuto(data);
+
+            for(let i = 0; i <= data.length; i++) {
+                patentes.push(data[i].patente);
+            }
+            console.log("patentes", patentes)
         })
         .catch((error) => console.error(error));
 }
@@ -67,6 +74,7 @@ function mostrarAuto(data) {
         tr.insertCell(3).innerHTML = element.patente;
         tr.insertCell(4).innerHTML = element.km;
         tr.insertCell(5).innerHTML = element.fechaIngreso;
+        tr.insertCell(6).innerHTML = element.disponible? "si" : "no";
 
         // Boton de editar
         let editar = document.createElement("button");
@@ -78,7 +86,7 @@ function mostrarAuto(data) {
             `buscarValoresAuto(${element.autoId})`
         );
 
-        let tEditar = tr.insertCell(6);
+        let tEditar = tr.insertCell(7);
         tEditar.appendChild((editar));
 
         // Boton de eliminar
@@ -91,7 +99,7 @@ function mostrarAuto(data) {
             `validacionEliminar(${element.autoId}, ${element.disponible})`
         );
 
-        let tEliminar = tr.insertCell(7);
+        let tEliminar = tr.insertCell(8);
         tEliminar.appendChild((eliminar));
     });
 }

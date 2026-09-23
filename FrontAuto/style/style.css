@@ -1,6 +1,6 @@
 h2 {
     font-family: "Changa One", sans-serif;
-  
+
     font-style: italic;
 
     letter-spacing: 2px;
@@ -21,10 +21,33 @@ h2 {
     letter-spacing: 1px;
 }
 
-.card-body th{
+.card-body th {
     letter-spacing: 1px;
 }
 
 #tablaAuto {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 390px) {
+    #cardAgregar .subtitle {
+        font-size:large;
+    }
+
+    #cardAgregar .col-md-6 {
+        margin-top: 0rem;
+    }
+
+    #cardAgregar label {
+        font-size: small;
+    }
+
+    #cardAgregar input {
+        height: 45%;
+    }
+
+    #cardAgregar input::placeholder {
+        font-size: small;
+    }
+
 }
