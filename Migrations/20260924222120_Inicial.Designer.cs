@@ -3,17 +3,17 @@ using System;
 using EvaluacionApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace EvaluacionApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260917190407_Todo")]
-    partial class Todo
+    [Migration("20260924222120_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,38 +21,38 @@ namespace EvaluacionApi.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.18")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("EvaluacionApi.Models.Auto", b =>
                 {
                     b.Property<int>("AutoId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AutoId"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("AutoId"));
 
-                    b.Property<int>("Anio")
-                        .HasColumnType("int");
+                    b.Property<int>("Año")
+                        .HasColumnType("integer");
 
-                    b.Property<bool>("Diponible")
-                        .HasColumnType("bit");
+                    b.Property<bool>("Disponible")
+                        .HasColumnType("boolean");
 
-                    b.Property<DateTime>("FechaIngreso")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly?>("FechaIngreso")
+                        .HasColumnType("date");
 
                     b.Property<int>("Km")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("Marca")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Modelo")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Patente")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("AutoId");
 
