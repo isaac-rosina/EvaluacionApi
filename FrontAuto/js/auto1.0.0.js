@@ -1,6 +1,6 @@
 function agregarAuto() {
     var auto = {
-        marca: document.getElementById("marca").value.Trim(),
+        marca: document.getElementById("marca").value,
         modelo: document.getElementById("modelo").value,
         año: document.getElementById("año").value,
         patente: document.getElementById("patente").value,
