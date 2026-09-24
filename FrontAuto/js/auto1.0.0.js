@@ -22,7 +22,7 @@ function agregarAuto() {
         return;
     };
 
-    fetch("http://localhost:5177/api/Auto", {
+    fetch("http://evaluacionapi-j5hx.onrender.com/api/Auto", {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -47,7 +47,7 @@ function agregarAuto() {
 function obtenerAuto() {
     var patentes = [];
 
-    fetch("http://localhost:5177/api/Auto")
+    fetch("http://evaluacionapi-j5hx.onrender.com/api/Auto")
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
@@ -105,7 +105,7 @@ function mostrarAuto(data) {
 }
 
 function buscarValoresAuto(id) {
-    fetch(`http://localhost:5177/api/Auto/${id}`)
+    fetch(`http://evaluacionapi-j5hx.onrender.com/api/Auto/${id}`)
         .then((res) => {
             if(!res.ok) {
                 throw new Error(`Error HTTP: ${res.status}`)
@@ -149,7 +149,7 @@ function editarAuto() {
         disponible: document.querySelector('input[name="disponible"]:checked').value === "true",
     }
 
-     fetch(`http://localhost:5177/api/Auto/${id}`, {
+     fetch(`http://evaluacionapi-j5hx.onrender.com/api/Auto/${id}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
@@ -189,7 +189,7 @@ function validacionEliminar(id, disponible) {
     }
 }
 function eliminarAuto(id) {
-    fetch(`http://localhost:5177/api/Auto/${id}`, {
+    fetch(`http://evaluacionapi-j5hx.onrender.com/api/Auto/${id}`, {
         method: "DELETE",
     })
         .then(() => {
