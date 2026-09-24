@@ -37,12 +37,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseDefaultFiles(new DefaultFilesOptions
+var defaultFilesOptions = new DefaultFilesOptions
 {
     FileProvider = new PhysicalFileProvider(
         Path.Combine(Directory.GetCurrentDirectory(), "FrontAuto")),
     RequestPath = ""
-});
+};
+defaultFilesOptions.DefaultFileNames.Clear();
+defaultFilesOptions.DefaultFileNames.Add("views/auto.html");
+
+app.UseDefaultFiles(defaultFilesOptions);
 
 app.UseStaticFiles(new StaticFileOptions
 {
