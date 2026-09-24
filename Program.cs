@@ -44,7 +44,7 @@ var defaultFilesOptions = new DefaultFilesOptions
     RequestPath = ""
 };
 defaultFilesOptions.DefaultFileNames.Clear();
-defaultFilesOptions.DefaultFileNames.Add("views/auto.html");
+defaultFilesOptions.DefaultFileNames.Add("views/index.html");
 
 app.UseDefaultFiles(defaultFilesOptions);
 
