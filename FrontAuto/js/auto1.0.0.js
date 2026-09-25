@@ -1,3 +1,5 @@
+var patentes = [];
+
 function agregarAuto() {
     var auto = {
         marca: document.getElementById("marca").value,
@@ -9,11 +11,11 @@ function agregarAuto() {
         disponible: true,
     };
 
-    if((auto.marca && auto.modelo && auto.año && auto.patente && auto.km && auto.fechaIngreso) == "") {
+    if ((auto.marca && auto.modelo && auto.año && auto.patente && auto.km && auto.fechaIngreso) == "") {
         alert("Todos los campos deben estar completos.");
         return;
     };
-    if(auto.modelo.length > 10) {
+    if (auto.modelo.length > 10) {
         alert("El modelo puede tener 10 carácteres como máximo.");
         return;
     }
@@ -21,6 +23,10 @@ function agregarAuto() {
         alert("Los kilometros no pueden ser negativos");
         return;
     };
+    if (patentes.includes(auto.patente)) {
+        alert(`La patente ${auto.patente} ya existe en el sistema, elija otro.`);
+        return;
+    }
 
     fetch("https://evaluacionapi-j5hx.onrender.com/api/Auto", {
         method: "POST",
@@ -45,18 +51,14 @@ function agregarAuto() {
 }
 
 function obtenerAuto() {
-    var patentes = [];
-
     fetch("https://evaluacionapi-j5hx.onrender.com/api/Auto")
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
             mostrarAuto(data);
 
-            for(let i = 0; i <= data.length; i++) {
-                patentes.push(data[i].patente);
-            }
-            console.log("patentes", patentes)
+            const patentes = data.map(auto => auto.patente);
+            console.log("patentes", patentes);
         })
         .catch((error) => console.error(error));
 }
@@ -74,7 +76,7 @@ function mostrarAuto(data) {
         tr.insertCell(3).innerHTML = element.patente;
         tr.insertCell(4).innerHTML = element.km;
         tr.insertCell(5).innerHTML = element.fechaIngreso;
-        tr.insertCell(6).innerHTML = element.disponible? "si" : "no";
+        tr.insertCell(6).innerHTML = element.disponible? "SÍ" : "NO";
 
         // Boton de editar
         let editar = document.createElement("button");
@@ -122,7 +124,7 @@ function buscarValoresAuto(id) {
             document.getElementById("patenteEditar").value = data.patente;
             document.getElementById("kilometrosEditar").value = data.km;
             document.getElementById("fechaIngresoEditar").value = data.fechaIngreso;
-            document.getElementById(data.disponible ? "disponible-si" : "disponible-no").checked = true;
+            document.getElementById(data.disponible? "disponible-si" : "disponible-no").checked = true;
 
             const id = `<span id="idEditar">${data.autoId}</span>`
             document.getElementById("idEditar").innerHTML = id;

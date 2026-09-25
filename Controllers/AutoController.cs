@@ -19,7 +19,7 @@ namespace EvaluacionApi.Controllers
         [HttpGet]
         public async Task<IActionResult> ListarAuto()
         {
-            var auto = await _context.Autos.ToListAsync();
+            var auto = await _context.Autos.OrderBy(a => a.AutoId).ToListAsync();
 
             return Ok(auto);
         }
