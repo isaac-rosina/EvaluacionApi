@@ -30,12 +30,26 @@ h2 {
 }
 
 @media (max-width: 390px) {
+
+    /* CARD PRINCIPAL ------- */
+
+    #cardAgregar {
+
+    }
+
+    #cardAgregar .card-body {
+        margin-top: 1rem;
+    }
+
     #cardAgregar .subtitle {
         font-size:large;
     }
 
     #cardAgregar .col-md-6 {
         margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     #cardAgregar label {
@@ -44,9 +58,71 @@ h2 {
 
     #cardAgregar input {
         height: 45%;
+        width: 85%;
     }
 
     #cardAgregar input::placeholder {
+        font-size: small;
+    }
+
+    #cardAgregar .text-end {
+        display: flex;
+        justify-content: center;
+    }
+
+    #cardAgregar button {
+        margin-bottom: 1rem;
+    }
+
+    /* MODAL ------------------ */
+
+    #modalEditar {
+       
+    }
+
+    #modalEditar .modal-title {
+        font-size:large;
+    }
+
+    #modalEditar .col-md-6 {
+        margin-top: -0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #modalEditar label{
+        font-size: small;
+    }
+
+    #modalEditar input {
+
+        font-size: small;
+        height: 45%;
+        width: 85%;
+    }
+
+    #modalEditar .form-check {
+        padding-left: 0rem;
+    }
+
+    #modalEditar .modal-footer {
+        padding-top: 0rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* TABLA ------------ */
+
+    #tabla .subtitle {
+        font-size:large;
+    }
+
+    th {
+        font-size: small;
+    }
+
+    #tablaAuto td {
         font-size: small;
     }
 

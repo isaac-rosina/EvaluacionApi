@@ -40,7 +40,7 @@ app.UseHttpsRedirection();
 var defaultFilesOptions = new DefaultFilesOptions
 {
     FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "FrontAuto")),
+        Path.Combine(builder.Environment.ContentRootPath, "FrontAuto")),  // 👈 cambiado
     RequestPath = ""
 };
 defaultFilesOptions.DefaultFileNames.Clear();
@@ -51,7 +51,7 @@ app.UseDefaultFiles(defaultFilesOptions);
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "FrontAuto")),
+        Path.Combine(builder.Environment.ContentRootPath, "FrontAuto")),  // 👈 cambiado
     RequestPath = ""
 });
 
