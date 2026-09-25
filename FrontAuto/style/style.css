@@ -53,7 +53,7 @@ h2 {
     }
 
     #cardAgregar label {
-        font-size: small;
+        font-size: medium;
     }
 
     #cardAgregar input {
@@ -62,7 +62,7 @@ h2 {
     }
 
     #cardAgregar input::placeholder {
-        font-size: small;
+        font-size: medium;
     }
 
     #cardAgregar .text-end {
@@ -76,10 +76,6 @@ h2 {
 
     /* MODAL ------------------ */
 
-    #modalEditar {
-       
-    }
-
     #modalEditar .modal-title {
         font-size:large;
     }
@@ -92,12 +88,12 @@ h2 {
     }
 
     #modalEditar label{
-        font-size: small;
+        font-size: medium;
     }
 
     #modalEditar input {
 
-        font-size: small;
+        font-size: medium;
         height: 45%;
         width: 85%;
     }
@@ -119,11 +115,11 @@ h2 {
     }
 
     th {
-        font-size: small;
+        font-size: medium;
     }
 
     #tablaAuto td {
-        font-size: small;
+        font-size: medium;
     }
 
 }
