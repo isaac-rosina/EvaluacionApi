@@ -81,13 +81,14 @@ h2 {
     }
 
     #modalEditar .col-md-6 {
-        margin-top: -0.5rem;
+        margin-top: 0rem;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     #modalEditar label{
+        /* margin-top: 2rem; */
         font-size: medium;
     }
 

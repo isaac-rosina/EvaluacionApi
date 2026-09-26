@@ -1,4 +1,4 @@
-var patentes = [];
+let patentes = [];
 
 function agregarAuto() {
     var auto = {
@@ -57,7 +57,7 @@ function obtenerAuto() {
             console.log(data);
             mostrarAuto(data);
 
-            const patentes = data.map(auto => auto.patente);
+            patentes = data.map(auto => auto.patente);
             console.log("patentes", patentes);
         })
         .catch((error) => console.error(error));
@@ -150,6 +150,19 @@ function editarAuto() {
         fechaIngreso: document.getElementById("fechaIngresoEditar").value || null, 
         disponible: document.querySelector('input[name="disponible"]:checked').value === "true",
     }
+
+     if ((editarAuto.marca && editarAuto.modelo && editarAuto.año && editarAuto.patente && editarAuto.km && editarAuto.fechaIngreso) == "") {
+        alert("Todos los campos deben estar completos.");
+        return;
+    };
+    if (editarAuto.modelo.length > 10) {
+        alert("El modelo puede tener 10 carácteres como máximo.");
+        return;
+    }
+    if (editarAuto.km < 0) {
+        alert("Los kilometros no pueden ser negativos");
+        return;
+    };
 
      fetch(`https://evaluacionapi-j5hx.onrender.com/api/Auto/${id}`, {
         method: "PUT",
