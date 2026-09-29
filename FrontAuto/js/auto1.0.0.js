@@ -86,8 +86,10 @@ function mostrarAuto(data) {
         let tdFecha = tr.insertCell(5);
         tdFecha.innerHTML = element.fechaIngreso;
         tdFecha.classList.add("ocultar-mobile");
-        
-        tr.insertCell(6).innerHTML = element.disponible? "SÍ" : "NO";
+
+        let tdDisponible = tr.insertCell(6);
+        tdDisponible.innerHTML = element.disponible? "SÍ" : "NO";
+        tdDisponible.classList.add("ocultar-mobile");
 
         // Boton de editar
         let editar = document.createElement("button");
