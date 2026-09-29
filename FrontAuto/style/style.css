@@ -115,12 +115,20 @@ h2 {
         font-size:large;
     }
 
+    #tabla .table-dark{
+        max-width: 80%;
+    }
+
     th {
-        font-size: medium;
+        font-size: small;
     }
 
     #tablaAuto td {
-        font-size: medium;
+        font-size: small;
+    }
+
+    .ocultar-mobile {
+        display: none;
     }
 
 }

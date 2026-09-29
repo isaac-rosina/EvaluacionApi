@@ -72,10 +72,21 @@ function mostrarAuto(data) {
 
         tr.insertCell(0).innerHTML = element.marca;
         tr.insertCell(1).innerHTML = element.modelo;
-        tr.insertCell(2).innerHTML = element.año;
+
+        let tdAño = tr.insertCell(2);
+        tdAño.innerHTML = element.año;
+        tdAño.classList.add("ocultar-mobile");
+
         tr.insertCell(3).innerHTML = element.patente;
-        tr.insertCell(4).innerHTML = element.km;
-        tr.insertCell(5).innerHTML = element.fechaIngreso;
+        
+        let tdKm = tr.insertCell(4);
+        tdKm.innerHTML = element.km;
+        tdKm.classList.add("ocultar-mobile");
+
+        let tdFecha = tr.insertCell(5);
+        tdFecha.innerHTML = element.fechaIngreso;
+        tdFecha.classList.add("ocultar-mobile");
+        
         tr.insertCell(6).innerHTML = element.disponible? "SÍ" : "NO";
 
         // Boton de editar
